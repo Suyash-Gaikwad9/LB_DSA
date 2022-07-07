@@ -15,20 +15,17 @@ int main(){
 
     int j = a-1;
     i=0;
+    //swapping array by their index
     while (i<j)
     {
         swap(arr[i],arr[j]);
         i++;
         j--;
     }
-    
-
+    //printing reverse array
     for(i=0;i<a;i++){
         cout<<" "<<arr[i];
     }
-
-
-
     return 0;
   
 
