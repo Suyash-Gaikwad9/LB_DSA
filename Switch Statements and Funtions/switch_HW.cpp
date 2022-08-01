@@ -22,7 +22,7 @@ int main(){
                 // cout<<number<<endl;
             }
             break;
-        number = number - total;
+        // number = number - ;
         case 50:
             if(choice<number){
                 int notes = number/choice;
