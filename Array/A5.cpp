@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 void printArray(int arr[], int size){
@@ -41,5 +41,48 @@ int main(){
     // printArray(odd,5);
 
 
+    return 0;
+}
+*/
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    
+    int n;
+    cout<<"Enter total number of elements :"<<endl;
+    cin>>n;
+    int arr[100];
+    cout<<"Enter the elements in array :"<<endl;
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    cout<<"Before swapping..!"<<endl;
+    for(int i=0;i<n; i++){
+        cout<<arr[i]<<" ";
+
+    }
+
+    for(int i=0;i<n;i+=2){
+        if(i+1<n){
+            swap(arr[i],arr[i+1]);
+        }
+    }    
+    cout<<"After swapping..!"<<endl;
+    for(int i=0;i<n; i++){
+        cout<<arr[i]<<" ";
+
+    }
+    
     return 0;
 }
