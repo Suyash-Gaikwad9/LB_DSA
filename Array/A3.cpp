@@ -12,7 +12,6 @@ bool search(int arr[], int size, int key){
 
 
 int main(){
-
     int n;
     cout<<"Enter total number of elements :"<<endl;
     cin>>n;
