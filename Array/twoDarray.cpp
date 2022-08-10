@@ -24,7 +24,7 @@ int MaxRowSum(int array[][3], int row, int col){
         }
         if(sum > maxi){
             maxi = sum;
-            RowIndex = row;
+            RowIndex = i;
         }
     }
     cout<<"The Maximum coloumn addition is "<<maxi<<endl;
@@ -96,6 +96,7 @@ int main(){
 /*
 getting index value as 3 everytime
 */
+//problem Fixed...;)
 
     
     int ans = MaxRowSum(arr, 3,3);
