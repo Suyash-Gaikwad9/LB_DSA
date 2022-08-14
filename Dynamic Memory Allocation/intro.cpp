@@ -53,6 +53,8 @@ int main(){
 
     cout<<"The Sum of all elements is "<<ans<<endl;
 
+    delete [] arr;
+
 
     return 0;
 }
