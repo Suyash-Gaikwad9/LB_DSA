@@ -170,6 +170,54 @@ bool detectLoop(Node *head)
     return false;
 }
 
+
+
+Node* floydDetectLoop(Node* head){
+
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow != NULL && fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+
+        slow = slow->next;
+        if(slow == fast){
+            //cout<<"Loop Present at "<<slow->data<<endl;
+            return slow;
+        }
+    }
+    return NULL;
+
+}
+
+
+Node* getStrartingNode(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* intersection = floydDetectLoop(head);
+    Node* slow = head;
+
+    while(slow != intersection){
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
+
+
+}
+
+
+
+
 int main()
 {
 
@@ -186,8 +234,8 @@ int main()
     // print(head);
 
     tail->next = head->next;
-
-    if (detectLoop(head))
+/*
+    if (floydDetectLoop(head) != NULL)
     {
         cout << "Loop is present..!" << endl;
     }
@@ -195,6 +243,9 @@ int main()
     {
         cout << "Loop is absent..!" << endl;
     }
+*/
+    Node* loop = getStrartingNode(head);
+    cout<<"Loop starting at "<<loop->data<<endl;
 
     /*
         deleteNode(4, head,tail);
