@@ -216,6 +216,21 @@ Node* getStrartingNode(Node* head){
 }
 
 
+void removeLoop(Node* head){
+    if(head == NULL){
+        return ;
+    }
+    Node* startOfLoop = getStrartingNode(head);
+    Node* temp = startOfLoop;
+
+    while(temp->next != startOfLoop){
+        temp = temp -> next;
+    }
+    temp->next = NULL;
+
+}
+
+
 
 
 int main()
@@ -234,7 +249,7 @@ int main()
     // print(head);
 
     tail->next = head->next;
-/*
+
     if (floydDetectLoop(head) != NULL)
     {
         cout << "Loop is present..!" << endl;
@@ -243,9 +258,12 @@ int main()
     {
         cout << "Loop is absent..!" << endl;
     }
-*/
+
     Node* loop = getStrartingNode(head);
     cout<<"Loop starting at "<<loop->data<<endl;
+
+    removeLoop(head);
+    print(head);
 
     /*
         deleteNode(4, head,tail);
