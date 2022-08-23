@@ -204,7 +204,7 @@ int main() {
                 temp2A->arb = temp2B;
             }
         }
-        /*read finished*/
+        
 
         generated_addr = head;
         Solution ob;
